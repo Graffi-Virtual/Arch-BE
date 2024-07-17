@@ -11,9 +11,6 @@ data class Mission(
     @Column(nullable = false)
     val name: String,
 
-    @Column(nullable = true)
-    val description: String? = null,
-
     @Column(nullable = false, updatable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
 )
