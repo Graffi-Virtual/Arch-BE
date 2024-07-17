@@ -31,7 +31,7 @@ class OpenAiService(
 
     fun getCompletion(prompt: String): Mono<String> {
         val request = OpenAIRequest(
-            model = "gpt-4",
+            model = "gpt-3.5-turbo-instruct",
             prompt = prompt,
             max_tokens = 100
         )

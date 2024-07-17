@@ -17,6 +17,8 @@ java {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://repo.spring.io/milestone") }
+	maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
 }
 
 dependencies {
@@ -32,6 +34,7 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.77.Final")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
