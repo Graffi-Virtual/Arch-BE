@@ -63,8 +63,9 @@ class OpenAiService(
             .bodyValue(request)
             .retrieve()
             .bodyToMono(OpenAiApiResponse::class.java)
-            .map { response -> response.choices.first().text }
+            .map { response -> response.choices.first().text}
             .flatMap { responseText ->
+                println("Open AI Response: $responseText")
                 val openAiResponse = parseResponse(responseText)
                 processResponse(openAiResponse, userId)
                 Mono.just(responseText)
@@ -73,7 +74,12 @@ class OpenAiService(
 
     private fun parseResponse(responseText: String): OpenAiResponse {
         val mapper = jacksonObjectMapper()
-        return mapper.readValue(responseText)
+        return try {
+            mapper.readValue(responseText)
+        } catch (e: Exception) {
+            println("JSON Parsing Error: ${e.message}")
+            OpenAiResponse(type = "Chat", content = responseText, mission1 = null, mission2 = null, mission3 = null)
+        }
     }
 
     private fun processResponse(response: OpenAiResponse, userId: Long) {

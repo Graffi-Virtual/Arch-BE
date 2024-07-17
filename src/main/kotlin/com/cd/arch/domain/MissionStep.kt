@@ -23,10 +23,10 @@ data class MissionStep(
     val user: User,
 
     @Column(nullable = false)
-    val isComplete: Boolean = false,
+    var isComplete: Boolean = false,
 
     @Column(nullable = true)
-    val completedAt: LocalDateTime? = null,
+    var completedAt: LocalDateTime? = null,
 
     @Column(nullable = false, updatable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()

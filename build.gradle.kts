@@ -34,7 +34,7 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.77.Final")
+	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.94.Final:osx-aarch_64")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
