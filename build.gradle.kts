@@ -33,6 +33,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2")
+	implementation("com.theokanning.openai-gpt3-java:service:0.18.2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.94.Final:osx-aarch_64")
 	runtimeOnly("com.mysql:mysql-connector-j")
